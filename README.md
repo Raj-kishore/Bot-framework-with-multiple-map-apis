@@ -1,6 +1,6 @@
 ####  Microsoft Location Control for Microsoft Bot Framework (v4 Node.js)
 **Overview**
-The Microsoft location control for Microsoft Bot Framework makes the process of collecting and validating the user's desired location in a conversation. The control is available Node.js.
+The Microsoft location control for Microsoft Bot Framework makes the process of collecting and validating the user's desired location in a conversation. The control is available for Node.js.
 
 **Transcript Example**
 
