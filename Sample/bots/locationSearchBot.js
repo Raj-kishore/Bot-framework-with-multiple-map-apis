@@ -1,5 +1,5 @@
 const { ActivityHandler, MessageFactory } = require('botbuilder');
-const botbuilderlocation = require('botbuilder-v4-location');
+const botbuilderlocation = require('botbuilder-location-bing-osm');
 
 const B_key = "Akw3CPHAT1X0Alb_DUL0JEDPIkCSX9ABnKQzJKNzrOy8xNa5GaLIYaGoAp3KsWd4";
 class locationSearchBot extends ActivityHandler { // Make it multi turn (Multiple steps with waterfall) for carousel item handling. Now it's single turn.
