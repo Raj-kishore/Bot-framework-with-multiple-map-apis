@@ -8,7 +8,8 @@ This package can fetch location data from Bing Maps or OSM. Go through [OSM Usag
 
 ![Flow Sample](https://raw.githubusercontent.com/Raj-kishore/Microsoft-Botbuilder-Location-Search/master/example.png)
 
-*Contact for feedback/suggestion/collab*
-"quickroutes@gmail.com"
+***Contact for feedback/suggestion/collab***
+> "quickroutes@gmail.com"
+
 **Author**
-*Raj kishor Maharana*
+> *Raj kishor Maharana*
