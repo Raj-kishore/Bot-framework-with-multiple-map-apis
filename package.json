@@ -1,35 +1,25 @@
 {
-    "name": "using-cards",
-    "version": "1.0.0",
-    "description": "Bot Builder v4 using cards sample",
-    "author": "Microsoft",
-    "license": "MIT",
-    "main": "index.js",
-    "scripts": {
-        "start": "node ./index.js",
-        "watch": "nodemon ./index.js",
-        "lint": "eslint .",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Microsoft/BotBuilder-Samples.git"
-    },
-    "dependencies": {
-        "botbuilder": "~4.8.0",
-        "botbuilder-dialogs": "~4.8.0",
-        "dotenv": "^8.2.0",
-        "geoip-lite": "^1.4.1",
-        "public-ip": "^4.0.1",
-        "restify": "~8.4.0"
-    },
-    "devDependencies": {
-        "eslint": "^6.6.0",
-        "eslint-config-standard": "^14.1.0",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-node": "^10.0.0",
-        "eslint-plugin-promise": "^4.2.1",
-        "eslint-plugin-standard": "^4.0.1",
-        "nodemon": "~1.19.4"
-    }
+  "name": "Botbuilder-Bing-Location",
+  "version": "1.0.1",
+  "description": "Bing Maps/OSM Search package for botbuilder v4 (NodeJs)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Microsoft-Bot-Framework-Location-Control-v4-NodeJS-Sample"
+  },
+  "keywords": [
+    "Microsoft",
+    "bot",
+    "builder",
+    "v4",
+    "location",
+    "node",
+    "bing",
+    "map"
+  ],
+  "author": "Raj Kishor Maharana",
+  "license": "Apache-2.0"
 }
