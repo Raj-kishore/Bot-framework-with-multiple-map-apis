@@ -27,18 +27,20 @@ class locationSearchBot extends ActivityHandler { // Make it multi turn (Multipl
 
             const text = context.activity.text;
 
+            //Static Image View
             const valueFromCarousel = context.activity.value;
 
             if (valueFromCarousel !== undefined)
-                if (valueFromCarousel.y_lat !== undefined)
-                    await botbuilderlocation.staticImageBing(context, valueFromCarousel.y_lat, valueFromCarousel.y_lng, B_key, valueFromCarousel.y);
+                if (valueFromCarousel.y_lat !== undefined) // y_lat and y_ng are latitude and langitude respectively while y is item number from the selected carousel item. 
+                    await botbuilderlocation.staticImageBing(context, valueFromCarousel.y_lat, valueFromCarousel.y_lng, B_key, valueFromCarousel.y);                    
+            //Static Image View
+
+
 
             if (conversationState.queryStatus === undefined) {
+               const validColors = ['Bing', 'OSM', 'Other'];
 
-
-                const validColors = ['Bing', 'OSM', 'Other'];
-
-                if (validColors.includes(text)) {
+               if (validColors.includes(text)) {
                     await context.sendActivity(`You chose ${text} to proceed with.`);
                     await context.sendActivity(`Type the search term..`);
 
