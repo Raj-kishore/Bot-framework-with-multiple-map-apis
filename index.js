@@ -26,7 +26,7 @@ function createAdaptiveCardBing(c, name, lat, lng, B_key) {
                         "type": "TextBlock",
                         "size": "Medium",
                         "weight": "Bolder",
-                        "text": '#' + c + ". " + name,
+                        "text":  name,
                         "spacing": "Large",
                         "horizontalAlignment": "Center",
                         "color": "Dark"
@@ -51,7 +51,7 @@ function createAdaptiveCardBing(c, name, lat, lng, B_key) {
                         "type": "Action.Submit",
                         "title": "Select this location",
                         "data": {
-                            "y": c,
+                            "y": name,
                             "y_lat": lat,
                             "y_lng": lng
                         }
@@ -96,6 +96,7 @@ function doRequest(st, B_key) {
 }
 
 async function osmMapCarousel(context, text, noOfItems, email){
+        var cardArray = [];
         let resOSM = JSON.parse(await doRequestOSM(text, email)); //You should get registered in OSM website with an email ID, example. quickroutes@gmail.com 
         if (resOSM.length === 0) {
             await context.sendActivity(MessageFactory.text("Sorry, OSM couldn't find any results for this query. Try different search term.", "Sorry"));
@@ -118,7 +119,7 @@ function createAdaptiveCardOSM(c, name, lat, lng) {
                         "type": "TextBlock",
                         "size": "Medium",
                         "weight": "Bolder",
-                        "text": '#' + c + ". " + name,
+                        "text":  name,
                         "spacing": "Large",
                         "horizontalAlignment": "Center",
                         "color": "Dark"
@@ -136,7 +137,7 @@ function createAdaptiveCardOSM(c, name, lat, lng) {
                         "type": "Action.Submit",
                         "title": "Select this location",
                         "data": {
-                            "x": c
+                            "x": name
                         }
                     }
                 ],
@@ -191,7 +192,7 @@ function doRequestOSM(st, email) {
 
 async function staticImageBing(context, lat, lng, B_key , c){ 
 		 await context.sendActivity({
-                        text: "You selected the following location, #" + JSON.stringify(c),
+                        text:  JSON.stringify(c),
                         attachments: [staticImageWrapper(lat, lng, B_key)]
                     });				
 	}
@@ -213,4 +214,11 @@ function staticImageWrapper(lat, lng, B_key) {
         );
 }
 
-module.exports = {bingMapCarousel, osmMapCarousel, staticImageBing};
+async function staticTextOSM(context, c){ 
+    await context.sendActivity({
+                   text:  JSON.stringify(c)
+               });				
+}
+
+
+module.exports = {bingMapCarousel, osmMapCarousel, staticImageBing, staticTextOSM};

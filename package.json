@@ -1,6 +1,6 @@
 {
-  "name": "Botbuilder-Bing-Location",
-  "version": "1.0.1",
+  "name": "botbuilder-location-bing-osm",
+  "version": "1.0.7",
   "description": "Bing Maps/OSM Search package for botbuilder v4 (NodeJs)",
   "main": "index.js",
   "scripts": {

@@ -18,12 +18,11 @@
     "dependencies": {
         "botbuilder": "~4.7.0",
         "botbuilder-dialogs": "^4.8.0",
-        "botbuilder-v4-location": "^1.1.4",
+        "botbuilder-location-bing-osm": "^1.0.7",
         "dotenv": "^8.2.0",
         "geoip-lite": "^1.4.1",
         "public-ip": "^4.0.1",
-        "restify": "~8.4.0",
-        "botbuilder-location-bing-osm": "1.0.2"
+        "restify": "~8.4.0"
     },
     "devDependencies": {
         "eslint": "^6.6.0",

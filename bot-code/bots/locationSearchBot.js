@@ -33,6 +33,9 @@ class locationSearchBot extends ActivityHandler { // Make it multi turn (Multipl
             if (valueFromCarousel !== undefined)
                 if (valueFromCarousel.y_lat !== undefined) // y_lat and y_ng are latitude and langitude respectively while y is item number from the selected carousel item. 
                     await botbuilderlocation.staticImageBing(context, valueFromCarousel.y_lat, valueFromCarousel.y_lng, B_key, valueFromCarousel.y);                    
+            if (valueFromCarousel !== undefined)    
+                if(valueFromCarousel.x !== undefined) // x stands for the last step's selected item's title
+                    await botbuilderlocation.staticTextOSM(context, valueFromCarousel.x)
             //Static Image View
 
 
@@ -57,13 +60,13 @@ class locationSearchBot extends ActivityHandler { // Make it multi turn (Multipl
 
                 switch (conversationState.maptype) {
                     case 'Bing':
-                        await botbuilderlocation.bingMapCarousel(context, text, 5, B_key);
+                        await botbuilderlocation.bingMapCarousel(context, text, 5, B_key); // (context, search_term, number_of_items_to_show, Bing_Maps_basic_key)
                         break;
                     case 'Other':
                         await context.sendActivity("Other search APIS such as Google Map, Map Box etc. are not planned yet.");
                         break;
                     case 'OSM':
-                        await botbuilderlocation.osmMapCarousel(context, text, 5, "quickroutes@gmail.com");
+                        await botbuilderlocation.osmMapCarousel(context, text, 5, "quickroutes@gmail.com");  // (context, search_term, number_of_items_to_show, Registred email id in OpenStreetMap)
                         break;
                 }
                 conversationState.queryStatus = undefined;
@@ -82,9 +85,9 @@ class locationSearchBot extends ActivityHandler { // Make it multi turn (Multipl
         // Iterate over all new members added to the conversation.
         for (const idx in activity.membersAdded) {
             if (activity.membersAdded[idx].id !== activity.recipient.id) {
-                const welcomeMessage = `Welcome to LocationSearch bot ` +
-                    'This bot will introduce you to seach and find near by top 5 cordinate points' +
-                    'Please select an option:';
+                const welcomeMessage = `Welcome to LocationSearch bot. ` +
+                    'This bot will introduce you to search near by top 5 cordinate points.' +
+                    'Please select one of the options:';
                 await turnContext.sendActivity(welcomeMessage);
                 await this.sendSuggestedActions(turnContext);
             }
