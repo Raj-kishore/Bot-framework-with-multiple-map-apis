@@ -22,7 +22,8 @@
         "dotenv": "^8.2.0",
         "geoip-lite": "^1.4.1",
         "public-ip": "^4.0.1",
-        "restify": "~8.4.0"
+        "restify": "~8.4.0",
+        "botbuilder-location-bing-osm": "1.0.2"
     },
     "devDependencies": {
         "eslint": "^6.6.0",
